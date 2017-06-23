@@ -5,10 +5,10 @@ var userCmd = process.argv;
 var searchArray = [];
 var searchString = '';
 
-var myTweets = require('./methods/my-tweets.js');
-var spotifySong = require('./methods/spotify-this-song.js');
-var movieInfo = require('./methods/movie-this.js');
-var doWhatItSays = require('./methods/do-what-it-says.js');
+var myTweets = require('./my-tweets/my-tweets.js');
+var spotifySong = require('./spotify-this-song/spotify-this-song.js');
+var movieInfo = require('./movie-this/movie-this.js');
+var doWhatItSays = require('./do-what-it-says/do-what-it-says.js');
 
 // keeps the main command in lowercase for simplicity's sake
 if (userCmd[2] != null) {

@@ -1,6 +1,6 @@
 
 var Twitter = require('twitter');
-const keys = require('../keys.js');
+const keys = require('./keys.js');
 
 function myTweets() {
 	console.log('myTweets() function called.');
