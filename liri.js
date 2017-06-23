@@ -5,9 +5,10 @@ var userCmd = process.argv;
 var searchArray = [];
 var searchString = '';
 
-const keys = require('./keys.js');
-
-var Twitter = require('twitter');
+var myTweets = require('./methods/my-tweets.js');
+var spotifySong = require('./methods/spotify-this-song.js');
+var movieInfo = require('./methods/movie-this.js');
+var doWhatItSays = require('./methods/do-what-it-says.js');
 
 // keeps the main command in lowercase for simplicity's sake
 if (userCmd[2] != null) {
@@ -48,50 +49,6 @@ switch (userCmd[2]) {
 					+ '* movie-this <some movie>\n* do-what-it-says');
 } // end of switch
 
-function myTweets() {
-	console.log('myTweets() function called.');
-	var client = new Twitter ({
-		consumer_key: keys.twitterKeys.consumer_key,
-		consumer_secret: keys.twitterKeys.consumer_secret,
-		access_token_key: keys.twitterKeys.access_token_key,
-		access_token_secret: keys.twitterKeys.access_token_secret
-	});
 
-	
-	var params = {
-		screen_name: 'jpsilkjr86',
-		count: 2,
-		include_rts: 1
-	};
-
-	client.get('statuses/user_timeline', params, function(error, tweets, response) {
-		if(error) {console.log(error);}
-		else {
-			console.log(tweets[0].text, '\n\n', tweets[1].text);  // text of tweets
-		}
-	  // console.log(response);  // Raw response object. 
-	});
-	// client.post('statuses/update', {status: "I'm using nodeJS to do this holy shit"})
-	// .then(function (tweet) {
-	// 	console.log(tweet);
-	// })
-	// .catch(function (error) {
-	// 	throw error;
-	// });
-}
-
-function spotifySong(song) {
-	console.log('spotifySong() function called.');
-	console.log('Chosen Song: ' + song);
-}
-
-function movieInfo(movie) {
-	console.log('movieInfo() function called.');
-	console.log('Chosen Movie: ' + movie);
-}
-
-function doWhatItSays() {
-	console.log('doWhatItSays() function called.');
-}
 
 
