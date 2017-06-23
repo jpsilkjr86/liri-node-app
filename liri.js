@@ -57,11 +57,14 @@ function myTweets() {
 		access_token_secret: keys.twitterKeys.access_token_secret
 	});
 
+	
 	var params = {
-		screen_name: 'nodejs'
+		screen_name: 'jpsilkjr86',
+		count: 2,
+		include_rts: 1
 	};
 
-	client.get('statuses/user_timeline', function(error, tweets, response) {
+	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 		if(error) {console.log(error);}
 		else {
 			console.log(tweets[0].text, '\n\n', tweets[1].text);  // text of tweets
