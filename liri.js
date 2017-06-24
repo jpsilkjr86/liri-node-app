@@ -5,7 +5,7 @@ var userCmd = process.argv;
 var searchArray = [];
 var searchString = '';
 
-var myTweets = require('./my-tweets/my-tweets.js');
+var tweet = require('./my-tweets/my-tweets.js');
 var spotifySong = require('./spotify-this-song/spotify-this-song.js');
 var movieInfo = require('./movie-this/movie-this.js');
 var doWhatItSays = require('./do-what-it-says/do-what-it-says.js');
@@ -29,7 +29,11 @@ if (userCmd.length > 3) {
 switch (userCmd[2]) {
 	case 'my-tweets':
 		// call myTweets() function
-		myTweets();
+		tweet.myTweets();
+		break;
+	case 'new-tweet':
+		// call myTweets() function
+		tweet.newTweet(searchString);
 		break;
 	case 'spotify-this-song':
 		// call spotifySong() function
@@ -45,7 +49,7 @@ switch (userCmd[2]) {
 		break;
 	default:
 		// logs error message
-		console.log('Valid arguments are:\n* my-tweets\n* spotify-this-song <some song>\n'
+		console.log('Valid arguments are:\n* my-tweets\n* new-tweet\n* spotify-this-song <some song>\n'
 					+ '* movie-this <some movie>\n* do-what-it-says');
 } // end of switch
 
