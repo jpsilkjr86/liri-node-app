@@ -5,11 +5,6 @@ var userCmd = process.argv;
 var argArray = [];
 var argString = '';
 
-var tweet = require('./tweet/tweet.js');
-var spotifySong = require('./spotify-this-song/spotify-this-song.js');
-var movieInfo = require('./movie-this/movie-this.js');
-var doWhatItSays = require('./do-what-it-says/do-what-it-says.js');
-
 // keeps the main command in lowercase for simplicity's sake
 if (userCmd[2] != null) {
 	userCmd[2] = userCmd[2].toLowerCase();
@@ -28,22 +23,27 @@ if (userCmd.length > 3) {
 // switch statement on the main command, at userCmd[2]
 switch (userCmd[2]) {
 	case 'my-tweets':
+		var tweet = require('./tweet/tweet.js');
 		// call myTweets() function
 		tweet.myTweets();
 		break;
 	case 'new-tweet':
+		var tweet = require('./tweet/tweet.js');
 		// call myTweets() function
 		tweet.newTweet(argString);
 		break;
 	case 'spotify-this-song':
+		var spotifySong = require('./spotify-this-song/spotify-this-song.js');
 		// call spotifySong() function
 		spotifySong(argString);
 		break;
 	case 'movie-this':
+		var movieInfo = require('./movie-this/movie-this.js');
 		// call movieInfo() function
 		movieInfo(argString);
 		break;
 	case 'do-what-it-says':
+		var doWhatItSays = require('./do-what-it-says/do-what-it-says.js');
 		// call doWhatItSays() function
 		doWhatItSays();
 		break;
