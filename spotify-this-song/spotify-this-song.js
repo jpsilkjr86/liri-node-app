@@ -17,7 +17,8 @@ function spotifySong(song) {
 			console.log('\nSong:', result.name);
 			console.log('Artist:', result.artists[0].name);
 			console.log('Album:', result.album.name);
-			console.log('Preview URL:', result.href);
+			console.log('Preview URL:', result.preview_url);
+			// console.log(result);
 		}
 		else {
 			console.log("\nSorry, your search did not yield any results.\n"
