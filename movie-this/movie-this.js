@@ -13,7 +13,7 @@ function movieInfo(movie) {
 			return console.log(error);
 		}
 		var result = JSON.parse(body);
-		console.log('==============================\n'
+		console.log('\n'
 			+ 'Title: ' + result.Title + '\n'
 			+ 'Year Released: ' + result.Year + '\n'
 			+ 'IMDB Rating: ' + result.imdbRating + '\n'
@@ -21,8 +21,7 @@ function movieInfo(movie) {
 			+ 'Language: ' + result.Language + '\n'
 			+ 'Plot: ' + result.Plot + '\n'
 			+ 'Actors:' + result.Actors + '\n'
-			+ 'Rotten Tomatoes URL: ' + result.tomatoURL + '\n'
-			+ '==============================');
+			+ 'Rotten Tomatoes URL: ' + result.tomatoURL + '\n');
 	});
 }
 

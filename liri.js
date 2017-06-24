@@ -2,10 +2,10 @@
 var userCmd = process.argv;
 
 // for use later in joining together any arguments from [3] and after
-var searchArray = [];
-var searchString = '';
+var argArray = [];
+var argString = '';
 
-var tweet = require('./my-tweets/my-tweets.js');
+var tweet = require('./tweet/tweet.js');
 var spotifySong = require('./spotify-this-song/spotify-this-song.js');
 var movieInfo = require('./movie-this/movie-this.js');
 var doWhatItSays = require('./do-what-it-says/do-what-it-says.js');
@@ -20,9 +20,9 @@ if (userCmd[2] != null) {
 // this will convert userCmd[3] and userCmd[4] into a single string "Hello Goodbye"
 if (userCmd.length > 3) {
 	for (let i = 3; i < userCmd.length; i ++) {
-		searchArray.push(userCmd[i]);
+		argArray.push(userCmd[i]);
 	}
-	searchString = searchArray.join(' ');
+	argString = argArray.join(' ');
 }
 
 // switch statement on the main command, at userCmd[2]
@@ -33,26 +33,26 @@ switch (userCmd[2]) {
 		break;
 	case 'new-tweet':
 		// call myTweets() function
-		tweet.newTweet(searchString);
+		tweet.newTweet(argString);
 		break;
 	case 'spotify-this-song':
 		// call spotifySong() function
-		spotifySong(searchString);
+		spotifySong(argString);
 		break;
 	case 'movie-this':
 		// call movieInfo() function
-		movieInfo(searchString);
+		movieInfo(argString);
 		break;
 	case 'do-what-it-says':
 		// call doWhatItSays() function
 		doWhatItSays();
 		break;
 	default:
-		// logs error message
-		console.log('Valid arguments are:\n* my-tweets\n* new-tweet\n* spotify-this-song <some song>\n'
-					+ '* movie-this <some movie>\n* do-what-it-says');
+		// default message
+		console.log('\nValid arguments are:'
+				+ '\n* my-tweets'
+				+ '\n* new-tweet <tweet text>'
+				+ '\n* spotify-this-song <some song>'
+				+ '\n* movie-this <some movie>'
+				+ '\n* do-what-it-says');
 } // end of switch
-
-
-
-

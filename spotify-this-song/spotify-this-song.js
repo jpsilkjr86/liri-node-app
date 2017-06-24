@@ -13,11 +13,11 @@ function spotifySong(song) {
 		}
 		var result = data.tracks.items[0];
 
-		console.log(data);
-		// console.log('Song:', result.name);
-		// console.log('Artist:', result.artists[0].name);
-		// console.log('Album:', result.album.name);
-		// console.log('Preview URL:', result.href);
+		// console.log(data);
+		console.log('\nSong:', result.name);
+		console.log('Artist:', result.artists[0].name);
+		console.log('Album:', result.album.name);
+		console.log('Preview URL:', result.href);
 	});
 }
 

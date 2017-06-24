@@ -22,18 +22,15 @@ var tweet = {
 			if(error) {return console.log(error);}
 
 			for (let i = 0; i < tweets.length; i++) {
-				console.log('\n' + tweets[i].text + '\n' + tweets[i].created_at);
+				console.log('\n' + tweets[i].text + '\n(' + tweets[i].created_at + ')');
 			}		
-			// console.log(tweets[0]);
-
-		  // console.log(response);  // Raw response object. 
 		});		
 	},
 
 	newTweet: function(text) {
 		client.post('statuses/update', {status: text})
 		.then(function (tweet) {
-			console.log('\nNew tweet posted:\n\n' + tweet.text + '\n' + tweet.created_at);
+			console.log('\nNew tweet posted:\n\n' + tweet.text + '\n(' + tweet.created_at + ')');
 		})
 		.catch(function (error) {
 			throw error;
