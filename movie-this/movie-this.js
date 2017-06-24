@@ -25,7 +25,7 @@ function movieInfo(movie) {
 				+ 'Rotten Tomatoes URL: ' + result.tomatoURL + '\n');
 		}
 		else {
-			console.log("\nWe're sorry, your search did not yield any results.\n"
+			console.log("\nSorry, your search did not yield any results.\n"
 					+ "Please check your spelling and try again.\n"
 					+ "In the meantime, checkout this movie!");
 			movieInfo('Mr. Nobody');
