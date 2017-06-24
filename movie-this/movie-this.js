@@ -13,15 +13,23 @@ function movieInfo(movie) {
 			return console.log(error);
 		}
 		var result = JSON.parse(body);
-		console.log('\n'
-			+ 'Title: ' + result.Title + '\n'
-			+ 'Year Released: ' + result.Year + '\n'
-			+ 'IMDB Rating: ' + result.imdbRating + '\n'
-			+ 'Country: ' + result.Country + '\n'
-			+ 'Language: ' + result.Language + '\n'
-			+ 'Plot: ' + result.Plot + '\n'
-			+ 'Actors:' + result.Actors + '\n'
-			+ 'Rotten Tomatoes URL: ' + result.tomatoURL + '\n');
+		if (result.Response === 'True') {
+			console.log('\n'
+				+ 'Title: ' + result.Title + '\n'
+				+ 'Year Released: ' + result.Year + '\n'
+				+ 'IMDB Rating: ' + result.imdbRating + '\n'
+				+ 'Country: ' + result.Country + '\n'
+				+ 'Language: ' + result.Language + '\n'
+				+ 'Plot: ' + result.Plot + '\n'
+				+ 'Actors:' + result.Actors + '\n'
+				+ 'Rotten Tomatoes URL: ' + result.tomatoURL + '\n');
+		}
+		else {
+			console.log("\nWe're sorry, your search did not yield any results.\n"
+					+ "Please check your spelling and try again.\n"
+					+ "In the meantime, checkout this movie!");
+			movieInfo('Mr. Nobody');
+		}
 	});
 }
 
