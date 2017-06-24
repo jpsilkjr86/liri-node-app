@@ -1,7 +1,8 @@
-
+// imports Twitter npm and keys
 var Twitter = require('twitter');
 const keys = require('./keys.js');
 
+// for authentication
 var client = new Twitter ({
 	consumer_key: keys.twitterKeys.consumer_key,
 	consumer_secret: keys.twitterKeys.consumer_secret,
@@ -10,6 +11,7 @@ var client = new Twitter ({
 });
 
 var tweet = {
+	// method for displaying last 20 tweets
 	myTweets: function() {
 		
 		var params = {
@@ -26,7 +28,7 @@ var tweet = {
 			}		
 		});		
 	},
-
+	// method for writing a new tweet according to text argument
 	newTweet: function(text) {
 		client.post('statuses/update', {status: text})
 		.then(function (tweet) {
@@ -36,8 +38,6 @@ var tweet = {
 			throw error;
 		});
 	}
-};
-
-	
+};	
 
 module.exports = tweet;

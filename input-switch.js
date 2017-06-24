@@ -1,5 +1,6 @@
 // object with methods for calling methods via switch statements comparing parameters
 var inputSwitch = {
+	// method handling mainCmd's only
 	noArg: function (mainCmd) {
 		// switch statement on the main command (userCmd[2])
 		switch (mainCmd) {
@@ -23,7 +24,7 @@ var inputSwitch = {
 						+ '\n* do-what-it-says');
 		} // end of switch
 	}, // end of noArg
-
+	// method for handling mainCmd and some argument string (e.g. search query)
 	withArg: function (mainCmd, argString) {
 		// switch statement on the main command (userCmd[2])
 		switch (mainCmd) {
@@ -66,6 +67,7 @@ var inputSwitch = {
 						+ '\n* do-what-it-says');
 		} // end of switch
 	}, // end of withArg
+	// method for handling mainCmd = 'do-what-it-says'
 	doWhatItSays: function() {
 		// grabs fs module
 		var fs = require('fs');

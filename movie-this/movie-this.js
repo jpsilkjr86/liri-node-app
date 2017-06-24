@@ -8,11 +8,14 @@ function movieInfo(movie) {
 	var queryURL = 'https://www.omdbapi.com/?apikey=' + omdbApiKey 
 				+ '&t=' + movie + '&tomatoes=true';
 
+	// requests data from omdb
 	request(queryURL, function (error, response, body) {
 		if(error) {
 			return console.log(error);
 		}
+		// saves result as a JSON parsed object
 		var result = JSON.parse(body);
+		// if no valid response, display info. else, display Mr. Nobody default info.
 		if (result.Response === 'True') {
 			console.log('\n'
 				+ 'Title: ' + result.Title + '\n'

@@ -18,7 +18,7 @@ if (userCmd[2] != null) {
 // this will convert userCmd[3] and userCmd[4] into a single string "Hello Goodbye"
 if (userCmd.length > 3) {
 	// push all non-empty userCmd's onto argArray
-	for (let i = 3; i < userCmd.length; i ++) {
+	for (let i = 3; i < userCmd.length; i++) {
 		if (userCmd[i] != null && userCmd[i] !== '' && userCmd[i] !== ' ') {
 			argArray.push(userCmd[i]);
 		}
